@@ -7,22 +7,22 @@
     <link rel="stylesheet" href="style.css" />
     <script src="prism.js"></script>
     
-    <title>Resaltador de MicroPython</title>
+    <title>Bash Highlighter</title>
     
 </head>
 
 <body>
 
-    <h1>Resaltador de MicroPython</h1>
+    <h1>Bash Highlighter</h1>
     <input type="text" id="fileName" placeholder="Nombre del archivo sin extensión" />
-    <textarea id="codeInput" placeholder="Escribe tu código MicroPython aquí..."></textarea>
+    <textarea id="codeInput" placeholder="Escribe tu código Bash aquí..."></textarea>
     <button onclick="addCode()">Agregar Código</button>
 
     <h2>Código Resaltado y HTML para Embed:</h2>
     <div class="output-container">
         <div>
             <h3>Código Resaltado:</h3>
-            <pre class="line-numbers"><code id="codeOutput" class="language-python"></code></pre>
+            <pre class="line-numbers"><code id="codeOutput" class="language-bash"></code></pre>
             <div class="file-info" id="fileInfo"></div>
         </div>
         <div>
@@ -57,7 +57,7 @@
             codeOutput.innerHTML = escapedCode;
 
             // Actualizar el nombre del archivo y el autor
-            const fileInfo = `Luciano's tech | ${fileName}.py`;
+            const fileInfo = `Luciano's tech | ${fileName}.sh`;
             document.getElementById('fileInfo').innerHTML = fileInfo;
 
             // Forzar Prism.js a resaltar el nuevo código
@@ -70,8 +70,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content=""width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/PIBSAS/syntax/prism.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/PIBSAS/syntax/style.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/PIBSAS/syntaxbash/prism.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/PIBSAS/syntaxbash/style.min.css" />
 </head>
 <style>
     body {
@@ -86,9 +86,8 @@
     }
 </style>
 <body>
-    <script src="https://cdn.jsdelivr.net/gh/PIBSAS/syntax/prism.min.js"><\/script>
-    <pre class="line-numbers"><code class="language-python">${escapedCode}</code></pre>
-    <div class="file-info">${fileInfo}</div>
+    <script src="https://cdn.jsdelivr.net/gh/PIBSAS/syntaxbash/prism.min.js"><\/script>
+    <pre class="line-numbers"><code class="language-bash">${escapedCode}</code></pre>
 </body>
 </html>`;
         }
